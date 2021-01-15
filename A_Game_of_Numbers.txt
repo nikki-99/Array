@@ -1,0 +1,38 @@
+Question link  :  https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/a-game-of-numbers-1-5d3a8cb3/
+
+
+Solution : 
+------------
+
+#include<stdio.h>
+main() {
+  
+    long N,flag=0,k,j;
+    scanf("%li", &N);
+    long A[N],i;
+    for(i=0;i<N;i++)
+    	scanf("%li\n", &A[i]);
+   for(i=0;i<N;i++){
+      flag=0;
+       for(j=i+1;j<N;j++){
+        if(A[i]<A[j]){
+          for(k=j+1;k<N;k++)
+           {
+              if(A[j]>A[k])
+               {
+                  printf("%li ",A[k]);
+                  flag=1;
+                  break;
+
+               
+               }
+           }
+         if(flag==1)
+         break;
+      }
+   }
+      if(flag==0)
+      printf("-1 ");
+   }
+}
+
