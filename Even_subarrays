@@ -1,0 +1,50 @@
+Question link--https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/i-hate-even-subarrays/
+
+solution:
+--------
+#include<stdio.h>
+char stack[100000];
+int top =-1;
+void push(char ele){
+  stack[++top]=ele;
+}
+void pop(){
+    top=top-1;
+}
+main(){
+	int T,j=1;
+	scanf("%d",&T);
+	while(j<=T){
+		top=-1;
+		char S[100000];
+		scanf("%s",S);
+		char *e;
+		e=S;
+		push(*e);
+		++e;
+		while(*e!='\0'){
+			
+			if(*e==stack[top]){
+				pop();
+ 
+			}
+			else
+			push(*e);
+ 
+			++e;
+	
+ 
+		}
+		if(top!=-1){
+		for(int k=0;k<=top;k++)
+			printf("%c",stack[k]);
+ 
+			printf("\n");
+		}
+		else
+		printf("KHALI\n");
+ 
+		j++;
+		
+	}
+}
