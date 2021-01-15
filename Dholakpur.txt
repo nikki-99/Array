@@ -1,0 +1,32 @@
+Question link--https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/finacial-problem-in-dholokpur-788ae595/
+
+Solution
+----
+#include<stdio.h>
+main(){
+	int T,i,j,k=1,count=0;
+	scanf("%d\n",&T);
+	while(k<=T){
+	long N;
+	scanf("%li\n",&N);
+	long price[N];
+	for(i=1;i<=N;i++){
+		scanf("%li ",&price[i]);
+	}
+    printf("1 ");
+	for(i=2;i<=N;i++){
+		count=0;
+        for(j=1;j<i;j++){
+			if(price[j]>=price[i]){
+                count++;
+			}
+		}
+		if(count==0)
+			printf("%li ",i);
+		else
+			printf("1 ");
+	
+	}
+	k++;
+	}
+}
