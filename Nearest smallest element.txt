@@ -1,0 +1,30 @@
+Question link---https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/nearest-smaller-element-929558b4/description/
+
+Solution
+-----
+#include<stdio.h>
+
+main(){
+	long N,i,j,count=0;
+	scanf("%li\n",&N);
+	long A[N];
+    for(i=0;i<N;i++)
+		scanf("%li ",&A[i]);
+	
+	printf("-1 ");
+	for(i=1;i<N;i++){
+		count=0;
+		for(j=i-1;j>-1;j--){
+			if(A[j]<A[i]){
+			    count++;
+				if(count==1){
+					printf("%li ",A[j]);
+					break;
+				}
+			}
+	    }
+		if(count==0)
+		printf("-1 ");
+    
+}
+}
